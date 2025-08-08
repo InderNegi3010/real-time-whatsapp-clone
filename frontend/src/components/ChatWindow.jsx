@@ -129,6 +129,7 @@ export default function ChatWindow({ wa_id, socket, onBack, conversations }) {
     setLoading(true);
     try {
       const data = await getMessages(wa_id);
+      console.log('Messages loaded for', wa_id, ':', data);
       setMessages(Array.isArray(data) ? data : []);
       setTimeout(scrollToBottom, 100);
     } catch (error) {
@@ -331,8 +332,11 @@ export default function ChatWindow({ wa_id, socket, onBack, conversations }) {
               <div className="flex items-center justify-center h-full text-gray-500">
                 <div className="text-center">
                   <div className="text-4xl mb-4">💬</div>
-                  <p>No messages yet</p>
-                  <p className="text-sm mt-2">Start the conversation!</p>
+                  <p className="mb-2">No messages yet with {currentChat?.name || wa_id}</p>
+                  <p className="text-sm text-gray-400">Start the conversation by typing a message below</p>
+                  <div className="mt-4 p-3 bg-blue-50 rounded-lg text-sm text-blue-600">
+                    💡 Tip: You can also send webhook payloads to simulate incoming messages
+                  </div>
                 </div>
               </div>
             )}

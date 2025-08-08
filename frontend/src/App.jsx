@@ -96,10 +96,11 @@ export default function App() {
     try {
       const data = await getConversations();
       console.log('Conversations loaded:', data);
-      setConversations(data || []);
+      setConversations(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error('Failed to load conversations:', err);
-      setError('Failed to load conversations');
+      // Don't show error for empty conversations, just log it
+      setConversations([]);
     }
   }
 

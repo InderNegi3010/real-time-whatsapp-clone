@@ -137,7 +137,12 @@ export default function ChatList({ conversations, onSelect, active }) {
         <div className="p-8 text-center text-gray-500">
           <div className="text-4xl mb-4">💬</div>
           <p>No conversations yet</p>
-          <p className="text-sm mt-2">Messages will appear here</p>
+          <p className="text-sm mt-2 mb-4">Messages will appear here when you start chatting</p>
+          <div className="text-xs text-gray-400 bg-gray-50 p-3 rounded-lg">
+            <p className="font-medium mb-2">To test the app:</p>
+            <p>1. Send a message to any contact</p>
+            <p>2. Or use the webhook endpoint to simulate incoming messages</p>
+          </div>
         </div>
       )}
     </div>
