@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:-webkit-scrollbar {
+  width: 6px;
+}
+
+/* ::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+} */
+
+/* Animation for typing indicator */
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+/* Auto-resizing textarea */
+textarea {
+  min-height: 48px;
+  max-height: 120px;
+  resize: none;
+  overflow-y: auto;
+}
+
+/* Message bubble animations */
+.message-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.message-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Dark mode transitions */
+* {
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Custom focus styles */
+/* .focus-ring:focus {
+  @apply ring-2 ring-green-500 ring-opacity-50 outline-none;
+} */
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+/* Message status colors */
+/* .status-sent {
+  @apply text-gray-400;
+}
+
+.status-delivered {
+  @apply text-gray-500;
+}
+
+.status-read {
+  @apply text-blue-500;
+} */
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .message-bubble {
+    max-width: calc(100% - 60px);
+  }
+}
